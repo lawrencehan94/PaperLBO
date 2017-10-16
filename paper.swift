@@ -1,3 +1,5 @@
+//Pull assumptions from previous view controllers that include user input
+
 //Core Assumptions
 let year1revenue: Double = 100.0
 let year2growth: Double = 0.40
