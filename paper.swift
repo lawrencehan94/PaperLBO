@@ -15,13 +15,13 @@ let nwcRevenue: Double = 0.05
 let entryMultiple: Double = 4.0
 let exitMultiple: Double = 6.0
 let percentPurchaseDebt: Double = 0.40
-let interestExpensePercentage: Double = 0.10
+let interestRate: Double = 0.10
 
 //Purchase Price
 let entryEV = entryMultiple * year1revenue * year1margin
 let entryDebt = percentPurchaseDebt * entryEV
 let entryEquityValue = (1-percentPurchaseDebt)*entryEV
-let interestExpense: Double = interestExpensePercentage * entryDebt
+let interestExpense: Double = interestRate * entryDebt
 
 //Revenue Assumptions
 
@@ -79,3 +79,5 @@ let exitDebt = entryDebt - totalFCF
 let exitEquityValue = exitEV - exitDebt
 let MoM = exitEquityValue / entryEquityValue
 print(MoM)
+
+print(FCFYear5)
