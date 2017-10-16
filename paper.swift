@@ -1,9 +1,9 @@
 //Core Assumptions
 let year1revenue: Double = 100.0
-let year2growth: Double = 0.20
+let year2growth: Double = 0.40
 let year6growthInput: Double = 0.05
 let year1margin: Double = 0.40
-let year6margin: Double = 0.40
+let year6marginInput: Double = 0.45
 
 //Miscellaneous Assumptions
 let depreciationRevenue: Double = 0.20
@@ -11,6 +11,11 @@ let interestExpense: Double = 12.0
 let taxRate: Double = 0.40
 let capexRevenue: Double = 0.15
 let nwcRevenue: Double = 0.05
+
+//Purchase Price Assumptions
+let entryMultiple = 4.0
+let exitMultiple = 6.0
+let percentPurchaseDebt = 0.40
 
 //Revenue Assumptions
 
@@ -28,14 +33,20 @@ let year5revenue = year4revenue*year5growth
 let year6revenue = year5revenue*year6growth
 
 //EBITDA Assumptions
-let year1EBITDA = 40.0
-let year6EBITDA = 40.0
+let changeInMargin = (year6marginInput - year1margin)/5
 
+let year2margin = year1margin + changeInMargin
+let year3margin = year2margin + changeInMargin
+let year4margin = year3margin + changeInMargin
+let year5margin = year4margin + changeInMargin
+let year6margin = year5margin + changeInMargin
 
-//Purchase Price Assumptions
-let entryMultiple = 4.0
-let exitMultiple = 6.0
-let percentPurchaseDebt = 0.40
+let year1EBITDA = year1margin * year1revenue
+let year2EBITDA = year2margin * year2revenue
+let year3EBITDA = year3margin * year3revenue
+let year4EBITDA = year4margin * year4revenue
+let year5EBITDA = year5margin * year5revenue
+let year6EBITDA = year6margin * year6revenue
 
 //Purchase Price
 let entryEV = entryMultiple * year1EBITDA
@@ -53,11 +64,11 @@ func getFCF(revenue: Double, EBITDA: Double) -> Double {
 	return FCF
 }
 
-let FCFYear1 = getFCF(revenue: year1revenue, EBITDA: 40.0)
-let FCFYear2 = getFCF(revenue: year2revenue, EBITDA: 40.0)
-let FCFYear3 = getFCF(revenue: year3revenue, EBITDA: 40.0)
-let FCFYear4 = getFCF(revenue: year4revenue, EBITDA: 40.0)
-let FCFYear5 = getFCF(revenue: year5revenue, EBITDA: 40.0)
+let FCFYear1 = getFCF(revenue: year1revenue, EBITDA: year1EBITDA)
+let FCFYear2 = getFCF(revenue: year2revenue, EBITDA: year2EBITDA)
+let FCFYear3 = getFCF(revenue: year3revenue, EBITDA: year3EBITDA)
+let FCFYear4 = getFCF(revenue: year4revenue, EBITDA: year4EBITDA)
+let FCFYear5 = getFCF(revenue: year5revenue, EBITDA: year5EBITDA)
 
 let totalFCF = FCFYear1 + FCFYear2 + FCFYear3 + FCFYear4 + FCFYear5
 
