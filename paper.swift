@@ -7,15 +7,21 @@ let year6marginInput: Double = 0.45
 
 //Miscellaneous Assumptions
 let depreciationRevenue: Double = 0.20
-let interestExpense: Double = 12.0
 let taxRate: Double = 0.40
 let capexRevenue: Double = 0.15
 let nwcRevenue: Double = 0.05
 
 //Purchase Price Assumptions
-let entryMultiple = 4.0
-let exitMultiple = 6.0
-let percentPurchaseDebt = 0.40
+let entryMultiple: Double = 4.0
+let exitMultiple: Double = 6.0
+let percentPurchaseDebt: Double = 0.40
+let interestExpensePercentage: Double = 0.10
+
+//Purchase Price
+let entryEV = entryMultiple * year1revenue * year1margin
+let entryDebt = percentPurchaseDebt * entryEV
+let entryEquityValue = (1-percentPurchaseDebt)*entryEV
+let interestExpense: Double = interestExpensePercentage * entryDebt
 
 //Revenue Assumptions
 
@@ -26,11 +32,11 @@ let year4growth = year3growth + changeInGrowth
 let year5growth = year4growth + changeInGrowth
 let year6growth = year5growth + changeInGrowth
 
-let year2revenue = year1revenue*year2growth
-let year3revenue = year2revenue*year3growth
-let year4revenue = year3revenue*year4growth
-let year5revenue = year4revenue*year5growth
-let year6revenue = year5revenue*year6growth
+let year2revenue = year1revenue*(1 + year2growth)
+let year3revenue = year2revenue*(1 + year3growth)
+let year4revenue = year3revenue*(1 + year4growth)
+let year5revenue = year4revenue*(1 + year5growth)
+let year6revenue = year5revenue*(1 + year6growth)
 
 //EBITDA Assumptions
 let changeInMargin = (year6marginInput - year1margin)/5
@@ -47,11 +53,6 @@ let year3EBITDA = year3margin * year3revenue
 let year4EBITDA = year4margin * year4revenue
 let year5EBITDA = year5margin * year5revenue
 let year6EBITDA = year6margin * year6revenue
-
-//Purchase Price
-let entryEV = entryMultiple * year1EBITDA
-let entryDebt = percentPurchaseDebt * entryEV
-let entryEquityValue = (1-percentPurchaseDebt)*entryEV
 
 //FCF Calulation
 func getFCF(revenue: Double, EBITDA: Double) -> Double {
