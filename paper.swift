@@ -1,5 +1,3 @@
-//Pull assumptions from previous view controllers that include user input
-
 //Core Assumptions
 let year1revenue: Double = 100.0
 let year2growth: Double = 0.40
@@ -19,7 +17,9 @@ let exitMultiple: Double = 6.0
 let percentPurchaseDebt: Double = 0.40
 let interestRate: Double = 0.10
 
-//Purchase Price
+func getReturns(year1revenue: Double, year2growth: Double, year6growthInput: Double, year1margin: Double, year6marginInput: Double, depreciationRevenue: Double, taxRate: Double, capexRevenue: Double, nwcRevenue: Double, entryMultiple: Double, exitMultiple: Double, percentPurchaseDebt: Double, interestRate: Double) -> (MoM: Double, IRR: Double) {
+	
+	//Purchase Price
 let entryEV = entryMultiple * year1revenue * year1margin
 let entryDebt = percentPurchaseDebt * entryEV
 let entryEquityValue = (1-percentPurchaseDebt)*entryEV
@@ -80,6 +80,13 @@ let exitEV = exitMultiple * year6EBITDA
 let exitDebt = entryDebt - totalFCF
 let exitEquityValue = exitEV - exitDebt
 let MoM = exitEquityValue / entryEquityValue
-print(MoM)
+let IRR = 0.25
+	
+return (MoM, IRR)
+	
+}
 
-print(FCFYear5)
+var returns = getReturns(year1revenue: year1revenue, year2growth: year2growth, year6growthInput: year6growthInput, year1margin: year1margin, year6marginInput: year6marginInput, depreciationRevenue: depreciationRevenue, taxRate: taxRate, capexRevenue: capexRevenue, nwcRevenue: nwcRevenue, entryMultiple: entryMultiple, exitMultiple: exitMultiple, percentPurchaseDebt: percentPurchaseDebt, interestRate: interestRate)
+
+print(returns)
+print(returns.MoM)
