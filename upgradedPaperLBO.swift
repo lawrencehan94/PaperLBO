@@ -1,15 +1,3 @@
-// Purchase Price Assumptions
-let entryMult = 4.0
-let exitMult = 6.0
-let percentDebt = 0.40
-let interestRate = 0.10
-
-// Cash Flow and Tax Rate Assumptions
-let capexRev = 0.15
-let nwcRev = 0.05
-let DARev = 0.20
-let taxRate = 0.40
-
 // Last Year Inputs
 let rev0 = 80.0
 let growth0 = 0.40
@@ -18,6 +6,18 @@ let margin0 = 0.40 //EBIT Margin
 // Target Year Inputs
 let growth6 = 0.05
 let margin6 = 0.45 //EBIT Margin
+
+// Cash Flow and Tax Rate Assumptions
+let capexRev = 0.15
+let nwcRev = 0.05
+let DARev = 0.20 //this would automatically be set equal to capex as a % of revenue when the user inputs here
+let taxRate = 0.40
+
+// Purchase Price Assumptions
+let entryMult = 4.0
+let exitMult = 6.0
+let percentDebt = 0.40
+let interestRate = 0.10
 
 // Growth Calculation
 let growthChange = (growth6-growth0)/6
@@ -101,3 +101,4 @@ let totalFCF = FCF1+FCF2+FCF3+FCF4+FCF5
 let exitDebt = entryDebt - totalFCF
 let exitEquity = exitEV - exitDebt
 let MoM = exitEquity / entryEquity
+print(MoM)
