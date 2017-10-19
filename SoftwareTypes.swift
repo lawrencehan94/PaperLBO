@@ -1,3 +1,19 @@
+var subsector = "Education"
+
+func getInput(subsector: String) -> String {
+
+	switch subsector {
+		case "Large Cap, Diversified": return "AAPL,GOOGL,MSFT,ORCL,IBM,CSCO,HPQ"
+		case "Education": return "LOPE,TWOU,CHGG,INST,STRA,CPLA,LRN,RST,APEI"
+		default: return "N.A."
+	}
+	
+}
+
+var tickerInput = getInput(subsector: subsector)
+
+print(tickerInput)
+
 Large Cap, Diversified Companies
 "AAPL,GOOGL,MSFT,ORCL,IBM,CSCO,HPQ"
 
