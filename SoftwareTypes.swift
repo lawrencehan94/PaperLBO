@@ -32,7 +32,16 @@ Security Software Companies
 "SYMC,PANW,FTNT,PFPT,FEYE,QLYS,IMPV,CUDA,SCWX,RPD,VDSI,MOBL,ZIXI"
 
 Telecom / Mobile Software Companies
+"VRSN,DOX,RNG,BSFT,SNCR,SONS,IPAS"
+
 Industry-Vertical Cloud Software Companies
+"ADSK,TRMB,VEEV,GWRE,AZPN,ATHN,BLKB,MDSO,RP,TWOU,ELLI,INOV,ALRM,QTWO,TDOC,MB,INST,CSLT,UPLD"
+
 Industry-Vertical Software Companies
+"TYL,NATI,EBIX"
+
 Healthcare Software Companies 
+"MCK,CERN,ATHN,MDRX,INOV,QSII,CSLT"
+
 Education Software Companies 
+"LOPE,TWOU,CHGG,INST,STRA,CPLA,LRN,RST,APEI"
