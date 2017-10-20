@@ -1,0 +1,27 @@
+var growthRates: [Double] = [0.38, 0.16, 0.03, 0.06, 0.34] 
+var multiples: [Double] = [11.2, 3.7, 2, 2.5, 3.4]
+
+var intercept = 0.0
+var slope = 0.0
+
+func getMultiple(_ growth: Double) -> Double {
+	return (slope*growth) + intercept
+}
+
+var numberofPoints = growthRates.count
+var iterations = 10000
+var alpha = 0.005
+
+for iteration in 1...iterations {
+	
+	for point in 0..<numberofPoints {
+		let difference = multiples[point] - getMultiple(growthRates[point])
+		intercept += alpha*difference
+		slope += alpha*difference*growthRates[point]
+	}
+	
+}
+
+let growthRate = 0.50
+let result = getMultiple(growthRate)
+print(result)
