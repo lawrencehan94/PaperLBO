@@ -1,0 +1,50 @@
+Analog/Mixed-Signal/RF 
+ADI, CRUS, IDTI, PI, IPHI, MTSI, MXIM, MXL, MPWR, POWI, QRVO, SMTC, SLAB, SWKS, TXN
+
+Communications / Consumer Logic 
+ACIA, AMBA, CAVM, DGII, MRVL, MLNX, NPTN, PXLW, QCOM, SIGM, SYNA
+
+Compute / Programmable Logic 
+AMD, INTC, LSCC, NVDA, QUIK, XLNX
+
+Discretes 
+AOSL, DIOD, CREE, ON, VSH
+
+Microcontroller/Diversified 
+AVGO, CY, MCHP, MSCC, Memory MU 
+
+Sensors 
+KN, ST, SYNA
+
+Major OEM 
+AAPL, BRCD, CSCO, CRY, HPQ, IBM, JNPR, MSFT, MSI, NTAP, ORCL
+
+Semi Intellectual Property 
+CEVA, DSPG, IDCC, PDFS, RMBS
+
+Front-End Wafer Processing 
+AMAT, ACLS, LRCX, VECO
+
+Lithography and Related 
+PLAB
+
+Automation/Subsystems 
+AEIS, BRKS, CGNX, COHR, MKSI, UCTT
+
+Inspection & Metrology 
+KLAC, NANO, RTEC, VECO
+
+Test Equipment 
+AME, EXPO, FORM, KEYS, NATI, TER, VIAV, XCRA
+
+Packaging, Assembly & Related
+COHU, ESIO, IVAC, KLIC
+
+Materials 
+APD, EMKR, ENTG, KOPN
+
+Foundries/Packaging Assembly and Test 
+AMKR
+
+Semiconductor EDA & Software 
+CDNS, SNPS,
